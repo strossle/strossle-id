@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "description": "A unique identification generator for strossle",
   "repository": "https://github.com/strossle/strossle-id",
-  "license": "isc",
+  "license": "ISC",
   "dependencies": {
+    "crc": "^3.4.0",
     "eslint": "^2.11.1",
     "eslint-config-strossle": "^1.0.1",
     "eslint-plugin-import": "^1.8.1",
+    "metrohash": "^1.4.0",
     "rfc4122": "^1.0.5"
   }
 }
