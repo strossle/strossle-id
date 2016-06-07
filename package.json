@@ -5,9 +5,12 @@
   "repository": "https://github.com/strossle/strossle-id",
   "license": "ISC",
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "lint": "./node_modules/.bin/eslint .",
     "test": "./node_modules/mocha/bin/mocha test/unit-test.js"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
     "crc": "^3.4.0",
     "metrohash": "^1.4.0",
