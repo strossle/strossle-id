@@ -5,7 +5,8 @@
   "repository": "https://github.com/strossle/strossle-id",
   "license": "ISC",
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js ."
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "test": "./node_modules/mocha/bin/mocha test/unit-test.js"
   },
   "dependencies": {
     "crc": "^3.4.0",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "mocha": "^2.5.3",
     "pre-commit": "^1.1.3"
   }
 }
