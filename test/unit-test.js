@@ -32,4 +32,8 @@ describe('Validating', function () {
         expect(strossleId.validateID(tooLongString)).to.equal(false);
         done();
     });
+    it('Should pass on real id', function(done) {
+        expect(strossleId.validateID(strossleId.generate())).to.equal(true);
+        done()
+    });
 });

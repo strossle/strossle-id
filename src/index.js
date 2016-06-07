@@ -3,8 +3,7 @@ const MetroHash128 = require('metrohash').MetroHash128;
 const crc = require('crc');
 const VERSION = 1;
 const IDLength = 38;
-
-let rfc4122 = new RFC4122();
+const rfc4122 = new RFC4122();
 
 const generate = function () {
     const versionPrefix = '0000';
@@ -16,7 +15,7 @@ const generate = function () {
     return `${versionAsFourBitsAndHash}${checksum}`;
 };
 
-const validateID = function(id) {
+const validateID = function (id) {
     if(id.length === IDLength) {
         const checksum = id.substr(-2);
         const idAndHash = id.substr(0, id.length-2);
@@ -24,7 +23,7 @@ const validateID = function(id) {
            return true;
         } else {
             return false;
-        };
+        }
     } else {
         return false;
     }
