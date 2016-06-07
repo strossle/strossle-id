@@ -6,10 +6,11 @@
   "license": "ISC",
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-    "test": "./node_modules/mocha/bin/mocha test/unit-test.js"
+    "test": "./node_modules/.bin/mocha test/unit-test.js"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ],
   "dependencies": {
     "crc": "^3.4.0",
