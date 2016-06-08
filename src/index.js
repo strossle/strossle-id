@@ -49,7 +49,7 @@ function generate(version) {
     return `${versionAsFourBitsAndHash}${checksum}`;
 }
 
-function validateID(id) {
+function validate(id) {
     if (id.length !== ID_LENGTH) {
         return false;
     }
@@ -63,5 +63,5 @@ function validateID(id) {
 
 module.exports = {
     generate,
-    validateID,
+    validate,
 };

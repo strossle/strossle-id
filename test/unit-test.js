@@ -29,11 +29,11 @@ describe('Generating', function () {
 describe('Validating', function () {
     it('Should fail too long string', function(done) {
         const tooLongString = '203023948093jsfldjlsdkjflksdjfksdfjlk203402938420938lkfjslkdjflskdjf';
-        expect(strossleId.validateID(tooLongString)).to.equal(false);
+        expect(strossleId.validate(tooLongString)).to.equal(false);
         done();
     });
     it('Should pass on real id', function(done) {
-        expect(strossleId.validateID(strossleId.generate())).to.equal(true);
+        expect(strossleId.validate(strossleId.generate())).to.equal(true);
         done()
     });
 });
@@ -41,7 +41,7 @@ describe('Validating', function () {
 describe('Versioning', function () {
     it('Should verify with right version number', function(done) {
         let idVersion = 2;
-        expect(strossleId.validateID(strossleId.generate(idVersion))).to.equal(true);
+        expect(strossleId.validate(strossleId.generate(idVersion))).to.equal(true);
         done();
     });
 });
