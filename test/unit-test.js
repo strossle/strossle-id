@@ -27,21 +27,34 @@ describe('Generating', function () {
 });
 
 describe('Validating', function () {
-    it('Should fail too long string', function(done) {
+    it('Should fail wrong length strings', function(done) {
         const tooLongString = '203023948093jsfldjlsdkjflksdjfksdfjlk203402938420938lkfjslkdjflskdjf';
         expect(strossleId.validate(tooLongString)).to.equal(false);
+
+        const tooShortString = '1234';
+        expect(strossleId.validate(tooShortString)).to.equal(false);
+
         done();
     });
     it('Should pass on real id', function(done) {
         expect(strossleId.validate(strossleId.generate())).to.equal(true);
         done()
     });
+    it('Should fail on fake id', function(done) {
+        let ID = strossleId.generate();
+        let fakeID = `XXXX${ID.substr(4, ID.length-4)}`;
+
+        expect(strossleId.validate(fakeID)).to.equal(false);
+        done()
+    });
 });
 
 describe('Versioning', function () {
-    it('Should verify with right version number', function(done) {
-        let idVersion = 2;
-        expect(strossleId.validate(strossleId.generate(idVersion))).to.equal(true);
+    it('Should default to current version if unsupported version is supplied', function(done) {
+        let idVersion = 1.42;
+        let ID = strossleId.generate(idVersion);
+        expect(strossleId.getVersion(ID)).to.equal(strossleId.CURRENT_ID_VERSION);
+        expect(strossleId.validate(ID)).to.equal(true);
         done();
     });
 });
