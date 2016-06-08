@@ -2,6 +2,15 @@
 
 Unique Strossle ID generator
 
+# Syntax
+Strossle ID is composed of **38** hexadecimal characters: 
+
+**`VVVVRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRCC`**
+
+- First 4 characters `VVVV` represent the version of the ID
+- Next are 32 `RRR...RRR` random characters
+- The ID is concluded with 2 checksum `CC` characters
+
 # Installation
 Install by running `npm install strossle-id`
 
@@ -21,8 +30,12 @@ let earlyVersionID = strossle-id.generate(idVersion);
 ```
 
 # ID Versions
-Table lists all strossle-id versions, their details and state.
-| Version | Description                 | State     |
-| ------- | --------------------------- | --------- |
-| 1       | Using [metrohash128](https://github.com/robertklep/node-metrohash) and [crc8](https://github.com/alexgorbatchev/node-crc) | Supported |
 
+| Version     | Description                 | State     |
+| ----------- | --------------------------- | --------- |
+| 1 (current) | Using [metrohash128](https://github.com/robertklep/node-metrohash) and [crc8](https://github.com/alexgorbatchev/node-crc) | Supported |
+
+**Note:** If an unsupported version is provided as parameter to `generate()` function, the function defaults to current version.
+
+# Tests
+Run `mocha test/unit-test.js`
