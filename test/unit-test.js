@@ -37,3 +37,11 @@ describe('Validating', function () {
         done()
     });
 });
+
+describe('Versioning', function () {
+    it('Should verify with right version number', function(done) {
+        let idVersion = 2;
+        expect(strossleId.validateID(strossleId.generate(idVersion))).to.equal(true);
+        done();
+    });
+});
