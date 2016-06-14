@@ -16,17 +16,17 @@ Install by running `npm install strossle-id`
 
 # Usage
 ```javascript
-const strossle-id = require('strossle-id');
+const strossleId = require('strossle-id');
 
 // Generate a new random id
-let newID = strossle-id.generate();
+let newID = strossleId.generate();
 
 // Validate id
-strossle-id.validate(newID); // true
+strossleId.validate(newID); // true
 
 // OPTIONAL - generate a specific version of strossle-ID
 let idVersion = 1;
-let earlyVersionID = strossle-id.generate(idVersion);
+let earlyVersionID = strossleId.generate(idVersion);
 ```
 
 # ID Versions
