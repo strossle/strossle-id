@@ -4,6 +4,7 @@
   "description": "A unique identification generator for strossle",
   "repository": "https://github.com/strossle/strossle-id",
   "license": "ISC",
+  "main": "src/index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "test": "./node_modules/.bin/mocha test/unit-test.js"
